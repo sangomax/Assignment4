@@ -33,11 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let seoul = City(name: "Seoul", temp: 35, precipitation: 50, icon: "skorea", summary: "Sunny",country: "Korean", flag: "🇰🇷")
         
         let cities = [vancouver,verona,tokyo,saoPaulo,seoul]
-        var cityVC : [CityViewController] = []
+        let cityVC = cities.map { createVC($0) }
         
-        for city in cities {
-            cityVC.append(createVC(city))
-        }
         tabVC.viewControllers = cityVC.map { UINavigationController(rootViewController: $0) }
         
     }
