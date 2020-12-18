@@ -109,5 +109,9 @@ class DetailsViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backButtonTitle = countryName.text
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popViewController(animated: false)
+    }
+    
 }
 
